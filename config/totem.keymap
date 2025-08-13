@@ -122,9 +122,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp W         &kp G            &kp D     &kp F                       &kp B             &kp Q        &kp L         &ltr 6 U    &kp O                        &kp Y
-         &mtl LCTRL R  &ltl 2 S         &ltl 1 T  &ltl 3 H                    &kp K             &kp J        &ltr 4 N      &ltr 5 E    &ltr 7 A                     &mtr RCTRL I
-&kp TAB  &kp X         &mtl LEFT_ALT C  &kp M     &kp P                       &kp V             &kp Z        &kp KP_COMMA  &kp KP_DOT  &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
+         &kp W         &kp G            &kp D     &kp F                       &kp B             &kp Q        &kp L         &ltr 6 U  &kp O                        &kp Y
+         &mtl LCTRL R  &ltl 2 S         &ltl 1 T  &ltl 3 H                    &kp K             &kp J        &ltr 4 N      &ltr 5 E  &ltr 7 A                     &mtr RCTRL I
+&kp TAB  &kp X         &mtl LEFT_ALT C  &kp M     &kp P                       &kp V             &kp Z        &kp COMMA     &kp DOT   &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
                                         &trans    &mt LA(LC(LEFT_SHIFT)) ESC  &sk LEFT_SHIFT    &lt 8 SPACE  &kp LEFT_GUI  &trans
             >;
         };
@@ -214,10 +214,10 @@
 
         AO {
             bindings = <
-        &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &kp DELETE
-        &trans  &trans  &trans  &kp ENTER  &trans     &tog 1  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans     &to 0   &trans  &trans  &trans  &sys_reset  &mo 9
-                        &trans  &trans     &kp TAB    &none   &trans  &trans
+                &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &kp DELETE
+                &trans  &trans  &trans  &kp ENTER  &trans     &tog 1  &trans  &trans  &trans  &trans
+&bt BT_CLR_ALL  &trans  &trans  &trans  &trans     &trans     &to 0   &trans  &trans  &trans  &sys_reset  &mo 9
+                                &trans  &trans     &kp TAB    &none   &trans  &trans
             >;
 
             label = "AO";
@@ -225,10 +225,10 @@
 
         Bluetooth {
             bindings = <
-            &trans  &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans
-            &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans    &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR  &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                  &trans        &trans        &trans    &trans  &trans  &trans
+            &trans  &trans        &trans        &trans        &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &trans
+            &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans            &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR  &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans            &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans        &trans        &trans            &trans  &trans  &trans
             >;
 
             label = "BT";
