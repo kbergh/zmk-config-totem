@@ -214,10 +214,10 @@
 
         AO {
             bindings = <
-                &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &kp DELETE
-                &trans  &trans  &trans  &kp ENTER  &trans     &tog 1  &trans  &trans  &trans  &trans
-&bt BT_CLR_ALL  &trans  &trans  &trans  &trans     &trans     &to 0   &trans  &trans  &trans  &sys_reset  &mo 9
-                                &trans  &trans     &kp TAB    &none   &trans  &trans
+        &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &kp DELETE
+        &trans  &trans  &trans  &kp ENTER  &trans     &tog 1  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans     &to 0   &trans  &trans  &trans  &sys_reset  &mo 9
+                        &trans  &trans     &kp TAB    &none   &trans  &trans
             >;
 
             label = "AO";
