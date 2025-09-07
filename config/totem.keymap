@@ -101,7 +101,6 @@
             #binding-cells = <0>;
             game { sequence = <L G>; bindings = <&tog GAME>; };
         };
-}
     };
 
     keymap {
