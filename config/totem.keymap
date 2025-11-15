@@ -17,7 +17,34 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-#define GAME 10
+enum layers {
+    BASE
+    GAME
+    MC
+    MOUSE
+    NAV
+    RSYM
+    LSYM
+    LSYM2
+    FN
+    NUM
+    AO
+    BT
+};
+
+// #define BASE 0
+// #define GAME 10
+// #define MC 10
+// #define MOUSE 1
+// #define NAV 2
+// #define RSYM 3
+// #define LSYM 4
+// #define LSYM2 5
+// #define FN 6
+// #define NUM 7
+// #define AO 8
+// #define BT 9
+
 
 / {
     combos {
@@ -100,6 +127,7 @@
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
             game { sequence = <L G>; bindings = <&tog GAME>; };
+            minecraft { sequence = <L M>; bindings = <&tog MC>; };
         };
     };
 
@@ -125,18 +153,34 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-         &kp W         &kp G            &kp D     &kp F                       &kp B             &kp Q        &kp L         &ltr 6 U  &kp O                        &kp Y
-         &mtl LCTRL R  &ltl 2 S         &ltl 1 T  &ltl 3 H                    &kp K             &kp J        &ltr 4 N      &ltr 5 E  &ltr 7 A                     &mtr RCTRL I
-&kp TAB  &kp X         &mtl LEFT_ALT C  &kp M     &kp P                       &kp V             &kp Z        &kp COMMA     &kp DOT   &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
-                                        &trans    &mt LA(LC(LEFT_SHIFT)) ESC  &sk LEFT_SHIFT    &lt 8 SPACE  &kp LEFT_GUI  &leader
+         &kp W         &kp G            &kp D            &kp F                       &kp B             &kp Q        &kp L         &ltr FN U     &kp O                        &kp Y
+         &mtl LCTRL R  &ltl NAV S       &ltl MOUSE T     &ltl RSYM H                 &kp K             &kp J        &ltr LSYM N   &ltr LSYM2 E  &ltr NUM A                   &mtr RCTRL I
+&kp TAB  &kp X         &mtl LEFT_ALT C  &kp M            &kp P                       &kp V             &kp Z        &kp COMMA     &kp DOT       &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
+                                        &trans           &mt LA(LC(LEFT_SHIFT)) ESC  &sk LEFT_SHIFT    &lt AO SPACE &kp LEFT_GUI  &leader
             >;
         };
 
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-        // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+        Game {
+            label = "GAME";
+
+            bindings = <
+         &kp W         &kp G            &kp D     &kp F                       &kp B                   &kp Q        &kp L         &ltr FN U     &kp O                        &kp Y
+         &mtl LCTRL R  &kp S            &kp T     &kp H                       &kp K                   &kp J        &ltr LSYM N   &ltr LSYM2 E  &ltr NUM A                     &mtr RCTRL I
+&kp TAB  &kp X         &mtl LEFT_ALT C  &kp M     &kp P                       &kp V                   &kp Z        &kp COMMA     &kp DOT       &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
+                                        &trans    &mt LA(LC(LEFT_SHIFT)) ESC  &mt LEFT_SHIFT SPACE    &lt AO SPACE &kp LEFT_GUI  &leader
+            >;
+        };
+
+        Minecraft {
+            label = "MC";
+
+            bindings = <
+         &kp W         &kp G            &kp D     &kp F                       &kp B                   &kp Q        &kp L         &ltr FN U     &kp O                        &kp Y
+         &mtl LCTRL R  &kp S            &kp T     &kp H                       &kp K                   &kp J        &ltr LSYM N   &ltr LSYM2 E  &ltr NUM A                     &mtr RCTRL I
+&kp TAB  &kp X         &mtl LEFT_ALT C  &kp M     &kp P                       &kp V                   &kp Z        &kp COMMA     &kp DOT       &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
+                                        &mt LA(LC(LEFT_SHIFT)) ESC   &kp LEFT_SHIFT  &kp SPACE        &lt AO SPACE &kp LEFT_GUI  &leader
+            >;
+        };
 
         Mouse {
             bindings = <
@@ -217,10 +261,10 @@
 
         AO {
             bindings = <
-        &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &kp DELETE
-        &trans  &trans  &trans  &kp ENTER  &trans     &tog 1  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans     &trans     &to 0   &trans  &trans  &trans  &sys_reset  &mo 9
-                        &trans  &trans     &kp TAB    &none   &trans  &trans
+        &trans  &trans  &trans  &trans     &trans     &trans      &trans  &trans  &trans  &kp DELETE
+        &trans  &trans  &trans  &kp ENTER  &trans     &tog MOUSE  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans     &trans     &to BASE    &trans  &trans  &trans  &sys_reset  &mo BT
+                        &trans  &trans     &kp TAB    &none       &trans  &trans
             >;
 
             label = "AO";
@@ -235,17 +279,6 @@
             >;
 
             label = "BT";
-        };
-
-        Game {
-            label = "GAME";
-
-            bindings = <
-         &kp W         &kp G            &kp D     &kp F                       &kp B                   &kp Q        &kp L         &ltr 6 U  &kp O                        &kp Y
-         &mtl LCTRL R  &kp S            &kp T     &kp H                       &kp K                   &kp J        &ltr 4 N      &ltr 5 E  &ltr 7 A                     &mtr RCTRL I
-&kp TAB  &kp X         &mtl LEFT_ALT C  &kp M     &kp P                       &kp V                   &kp Z        &kp COMMA     &kp DOT   &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
-                                        &trans    &mt LA(LC(LEFT_SHIFT)) ESC  &mt LEFT_SHIFT SPACE    &lt 8 SPACE  &kp LEFT_GUI  &leader
-            >;
         };
     };
 };
