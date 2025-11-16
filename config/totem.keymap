@@ -111,7 +111,7 @@
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
             game { sequence = <L G>; bindings = <&tog GAME>; };
-            minecraft { sequence = <L M>; bindings = <&tog MC>; };
+            mc { sequence = <L M>; bindings = <&tog MC>; };
         };
     };
 
@@ -155,7 +155,7 @@
             >;
         };
 
-        Minecraft {
+        Mc {
             label = "MC";
 
             bindings = <
