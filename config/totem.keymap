@@ -17,34 +17,18 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-enum layers {
-    BASE
-    GAME
-    MC
-    MOUSE
-    NAV
-    RSYM
-    LSYM
-    LSYM2
-    FN
-    NUM
-    AO
-    BT
-};
-
-// #define BASE 0
-// #define GAME 10
-// #define MC 10
-// #define MOUSE 1
-// #define NAV 2
-// #define RSYM 3
-// #define LSYM 4
-// #define LSYM2 5
-// #define FN 6
-// #define NUM 7
-// #define AO 8
-// #define BT 9
-
+#define BASE 0
+#define GAME 1
+#define MC 2
+#define MOUSE 3
+#define NAV 4
+#define RSYM 5
+#define LSYM 6
+#define LSYM2 7
+#define FN 8
+#define NUM 9
+#define AO 10
+#define BT 11
 
 / {
     combos {
