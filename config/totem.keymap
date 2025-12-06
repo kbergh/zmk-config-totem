@@ -20,15 +20,16 @@
 #define BASE 0
 #define GAME 1
 #define MC 2
-#define MOUSE 3
-#define NAV 4
-#define RSYM 5
-#define LSYM 6
-#define LSYM2 7
-#define FN 8
-#define NUM 9
-#define AO 10
-#define BT 11
+#define WWM 3
+#define MOUSE 4
+#define NAV 5
+#define RSYM 6
+#define LSYM 7
+#define LSYM2 8
+#define FN 9
+#define NUM 10
+#define AO 11
+#define BT 12
 
 / {
     combos {
@@ -110,8 +111,10 @@
         leader: leader {
             compatible = "zmk,behavior-leader-key";
             #binding-cells = <0>;
+            reset { sequence = <L L>; bindings = <&to BASE>; };
             game { sequence = <L G>; bindings = <&tog GAME>; };
             mc { sequence = <L M>; bindings = <&tog MC>; };
+            wwm { sequence = <L W>; bindings = <&tog WWM>; };
         };
     };
 
@@ -162,6 +165,17 @@
          &kp W         &kp G            &kp D     &kp F                       &kp B                   &kp Q        &kp L         &ltr FN U     &kp O                        &kp Y
          &mtl LCTRL R  &kp S            &kp T     &kp H                       &kp K                   &kp J        &ltr LSYM N   &ltr LSYM2 E  &ltr NUM A                     &mtr RCTRL I
 &kp TAB  &kp X         &mtl LEFT_ALT C  &kp M     &kp P                       &kp V                   &kp Z        &kp COMMA     &kp DOT       &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
+                                        &mt LA(LC(LEFT_SHIFT)) ESC   &kp LEFT_SHIFT  &kp SPACE        &lt AO SPACE &kp LEFT_GUI  &leader
+            >;
+        };
+
+        Wwm {
+            label = "WWM";
+
+            bindings = <
+         &kp W         &kp G            &kp D     &kp F                       &kp B                   &kp Q        &kp L         &ltr FN U     &kp O                        &kp Y
+         &mtl LEFT_ALT R  &kp S         &kp T     &kp H                       &kp K                   &kp J        &ltr LSYM N   &ltr LSYM2 E  &ltr NUM A                     &mtr RCTRL I
+&kp TAB  &kp X         &mtl LCTRL C     &kp M     &kp P                       &kp V                   &kp Z        &kp COMMA     &kp DOT       &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
                                         &mt LA(LC(LEFT_SHIFT)) ESC   &kp LEFT_SHIFT  &kp SPACE        &lt AO SPACE &kp LEFT_GUI  &leader
             >;
         };
