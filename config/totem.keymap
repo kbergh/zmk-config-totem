@@ -115,6 +115,7 @@
             game { sequence = <L G>; bindings = <&tog GAME>; };
             mc { sequence = <L M>; bindings = <&tog MC>; };
             wwm { sequence = <L W>; bindings = <&tog WWM>; };
+            wow { sequence = <L D>; bindings = <&tog WOW>; };
         };
     };
 
@@ -177,6 +178,17 @@
          &mtl LEFT_ALT R  &kp S         &kp T     &kp H                       &kp K                   &kp J        &ltr LSYM N   &ltr LSYM2 E  &ltr NUM A                     &mtr RCTRL I
 &kp TAB  &kp X         &mtl LCTRL C     &kp M     &kp P                       &kp V                   &kp Z        &kp COMMA     &kp DOT       &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
                                         &mt LA(LC(LEFT_SHIFT)) ESC   &kp LEFT_SHIFT  &kp SPACE        &lt AO SPACE &kp LEFT_GUI  &leader
+            >;
+        };
+
+        Wow {
+            label = "WOW";
+
+            bindings = <
+         &kp W         &kp G            &kp D     &kp F                       &kp B                   &kp Q        &kp L         &ltr FN U     &kp O                        &kp Y
+         &mtl LEFT_ALT R  &kp S         &kp T     &kp H                       &kp K                   &kp J        &ltr LSYM N   &ltr LSYM2 E  &ltr NUM A                     &mtr RCTRL I
+&kp TAB  &kp X         &kp C            &kp M     &kp P                       &kp V                   &kp Z        &kp COMMA     &kp DOT       &mtr RIGHT_ALT SINGLE_QUOTE  &kp FSLH      &mt BACKSPACE LC(BACKSPACE)
+                                        &mt LA(LC(LEFT_SHIFT)) ESC &kp LCTRL  &kp LEFT_SHIFT        &lt AO SPACE &kp LEFT_GUI  &leader
             >;
         };
 
