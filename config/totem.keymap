@@ -21,15 +21,16 @@
 #define GAME 1
 #define MC 2
 #define WWM 3
-#define MOUSE 4
-#define NAV 5
-#define RSYM 6
-#define LSYM 7
-#define LSYM2 8
-#define FN 9
-#define NUM 10
-#define AO 11
-#define BT 12
+#define WOW 4
+#define MOUSE 5
+#define NAV 6
+#define RSYM 7
+#define LSYM 8
+#define LSYM2 9
+#define FN 10
+#define NUM 11
+#define AO 12
+#define BT 13
 
 / {
     combos {
